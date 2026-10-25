@@ -50,8 +50,10 @@ describe("App routing", () => {
   });
 
   it("renders the workspace home without crashing", async () => {
-    const { getByText } = renderAt("/");
+    const { getByRole } = renderAt("/");
 
-    await waitFor(() => expect(getByText(/Good afternoon/i)).toBeInTheDocument());
+    await waitFor(() =>
+      expect(getByRole("heading", { name: /Work queue/i })).toBeInTheDocument(),
+    );
   });
 });

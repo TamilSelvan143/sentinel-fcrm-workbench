@@ -78,8 +78,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Risk Assessment Workbench" },
-      { name: "description", content: "Evidence-led risk assessment and governance workspace." },
+      { title: "MyRidius FCRM Workbench" },
+      { name: "description", content: "AI-assisted financial crime risk assessment workbench." },
       { name: "author", content: "Risk Assessment Workbench" },
       { property: "og:title", content: "Risk Assessment Workbench" },
       { property: "og:description", content: "Evidence-led risk assessment and governance workspace." },
@@ -105,8 +105,11 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body>
+      <body className="antialiased">
         {children}
         <Scripts />
       </body>
